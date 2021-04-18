@@ -1,0 +1,23 @@
+version: "2.0"
+
+rules:
+
+- rule: Saudacao
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+
+- rule: Se despede sempre que usuário de despede
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: Diz que é um chatbot sempre que perguntado
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default

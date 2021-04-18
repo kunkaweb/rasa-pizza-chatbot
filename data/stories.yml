@@ -1,0 +1,84 @@
+version: "2.0"
+
+stories:
+- story: caminho feliz
+  steps:
+  - intent: inicio_pedido
+  - action: utter_inicio_pedido
+  - intent: informa_pedido
+    entities:
+    - tamanho: pequena
+  - slot_was_set:
+    - tamanho: pequena
+  - action: utter_confirma_pedido
+  - intent: confirma_pedido
+  - action: action_escreve_pedido
+  - intent: despedida
+  - action: utter_despedida
+  
+- story: caminho feliz 2
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+  - intent: inicio_pedido
+  - action: utter_inicio_pedido
+  - intent: informa_pedido
+    entities:
+    - tamanho: pequena
+  - slot_was_set:
+    - tamanho: pequena
+  - action: utter_confirma_pedido
+  - intent: confirma_pedido
+  - action: action_escreve_pedido
+  - intent: despedida
+  - action: utter_despedida
+  
+- story: caminho feliz 3
+  steps:
+  - intent: informa_pedido
+    entities:
+    - tamanho: média
+  - slot_was_set:
+    - tamanho: média
+  - action: utter_confirma_pedido
+  - intent: confirma_pedido
+  - action: action_escreve_pedido
+  
+- story: caminho quase feliz
+  steps:
+  - intent: inicio_pedido
+  - action: utter_inicio_pedido
+  - intent: informa_pedido
+    entities:
+    - tamanho: pequena
+  - slot_was_set:
+    - tamanho: pequena
+  - action: utter_confirma_pedido
+  - intent: cancela_pedido
+  - action: utter_inicio_pedido
+  - intent: informa_pedido
+    entities:
+    - tamanho: pequena
+  - slot_was_set:
+    - tamanho: pequena
+  - action: utter_confirma_pedido
+  - intent: confirma_pedido
+  - action: action_escreve_pedido
+  - intent: despedida
+  - action: utter_despedida
+
+- story: subcaminho 1
+  steps:
+  - intent: inicio_pedido
+  - action: utter_inicio_pedido
+  
+- story: subcaminho 2
+  steps:
+  - intent: informa_pedido
+    entities:
+    - tamanho: pequena
+  - slot_was_set:
+    - tamanho: pequena
+  - action: utter_confirma_pedido
+  - intent: confirma_pedido
+  - action: action_escreve_pedido

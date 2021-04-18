@@ -1,0 +1,60 @@
+version: '2.0'
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+  
+# Lista com todas intençõs
+intents:
+- inicio_pedido
+- confirma_pedido
+- informa_pedido
+- despedida
+- saudacao
+- bom_humor
+- mau_humor
+- bot_challenge
+- cancela_pedido
+
+# Lista com todas entidades
+entities:
+- tamanho
+
+# Definem-se os slots (memória para guardar entidades)
+slots:
+  tamanho:
+    type: text
+    influence_conversation: false
+    
+# Lista com as respostas
+responses:
+  utter_saudacao:
+  - text: Olá! Em que posso ajudá-lo?
+  - text: Oi. O que deseja?
+  utter_despedida:
+  - text: Até a próxima
+  utter_bot_challenge:
+  - text: Eu sou um chatbot construído com o RASA.
+  utter_inicio_pedido:
+  - text: 'Servimos apenas o sabor de calabresa nos tamanhos pequeno, médio e grande. Nos valores 15, 25 e 30 respectivamente. Qual você deseja? '
+  utter_confirma_pedido:
+  - text: OK! Então você deseja uma pizza do tamanho {tamanho}? É isso mesmo?
+    buttons:
+    - title: Sim
+      payload: /confirma_pedido
+    - title: Não
+      payload: /cancela_pedido
+  utter_finaliza_pedido:
+  - text: Perfeito. Seu pedido foi confirmado.
+  utter_default:
+  - text: Me desculpe, não entendi. Você poderia reescrever?
+  
+# Lista de ações - incluir aqui as ações customizadas e responses
+actions:
+- utter_saudacao
+- utter_bot_challenge
+- utter_confirma_pedido
+- utter_despedida
+- utter_finaliza_pedido
+- utter_inicio_pedido
+- action_escreve_pedido

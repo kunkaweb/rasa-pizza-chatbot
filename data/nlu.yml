@@ -1,0 +1,81 @@
+version: "2.0"
+nlu:
+- intent: saudacao
+  examples: |
+    - Olá
+    - Oi
+    - E aí
+    - Beleza
+    - blz
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+- intent: despedida
+  examples: |
+    - Tenha um bom dia
+    - Até mais
+    - Tchau
+    - Adeus
+    - Obrigado
+    - tchau tchau
+    - fui
+    - Valeu
+    - Muito obrigado
+- intent: bot_challenge
+  examples: |
+    - você é humano?
+    - você é um robô?
+    - você é uma máquina?
+    - você é um computador?
+    - estou falando com um humano?
+    - estou falando com um robô?
+- intent: inicio_pedido
+  examples: |
+    - Gostaria de fazer um pedido
+    - Gostaria de pedir uma pizza
+    - Quero uma pizza
+    - Qual seu cardápio?
+    - Você poderia me enviar o cardápio?
+    - Quais tamanhos de pizza você tem?
+    - Tem pizza grande?
+    - Você tem pizza pequena?
+    - Quais sabores de pizza você tem?
+    - Tem pizza de que?
+    - Onde posso verificar os sabores?
+    - Qual o valor das pizzas?
+    - Qual o preço da pizza?
+- intent: informa_pedido
+  examples: |
+    - Quero uma pizza [pequena](tamanho)
+    - Uma pizza [média](tamanho) por favor
+    - Pizza [grande](tamanho)
+    - Quero uma pizza de calabresa [grande](tamanho)
+    - Me veja uma pizza [pequena](tamanho)
+    - Vou querer a pizza [média](tamanho)
+    - Quero uma [pequena](tamanho) por favor
+    - Quero a de 15 reais
+    - Veja a de 25 pila
+    - Manda a de 30tão
+- intent: confirma_pedido
+  examples: |
+    - Sim
+    - Isso mesmo
+    - Isso aí
+    - Pode mandar ver
+    - OK
+    - Confirmado
+    - É
+    - Perfeito
+    - Exato
+    - Positivo
+    - Yes
+- intent: cancela_pedido
+  examples: |
+    - Não
+    - Gostaria de mudar
+    - Na verdade queria outra
+    - Negativo
+    - Quero cancelar
+    - Não vou querer mais
+    - Incorreto
+    - Quero alterar meu pedido
